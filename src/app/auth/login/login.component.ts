@@ -5,12 +5,14 @@ import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
+  templateUrl:'./login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  formGroup: FormGroup | undefined;
+  formGroup!: FormGroup;
   constructor(private formBuilder: FormBuilder) { }
+
+  
 
   ngOnInit() {
     this.createForm();
@@ -23,26 +25,25 @@ export class LoginComponent implements OnInit {
     });
   }
 
-
   getError(el: any) {
     switch (el) {
       case 'user':
-        if (this.formGroup.get('username').hasError('required')) {
+        if (this.formGroup != null && this.formGroup.get('username')?.hasError('required')) {
           return 'Username required';
         }
         break;
       case 'pass':
-        if (this.formGroup.get('password').hasError('required')) {
+        if (this.formGroup != null && this.formGroup.get('password')?.hasError('required')) {
           return 'Password required';
         }
         break;
       default:
         return '';
     }
+    return null;
   }
 
   onSubmit(post: any) {
-    this.post = post;
     console.log(post);
   }
 
