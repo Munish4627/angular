@@ -1,1 +1,17 @@
-<p>home works!</p>
+ <!---Home page slider-->
+ <owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let slide of slides">
+      <ng-template carouselSlide [id]="slide.id">
+        <img [src]="slide.img">
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+<div style="text-align:center">
+  <h1>Angular Content Management System</h1>
+  <p>
+    This is a platform for technical writers to manage their blog post contents related to angular.
+    <br> Click on Login to get Started!!!
+  </p>
+</div>
