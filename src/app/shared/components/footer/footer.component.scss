@@ -1,50 +1,19 @@
-.docs-footer {
-    background: #3f51b5;
-    color: #fff;
-    padding: 12px;
-    font-size: 12px;
+.footer-copyright-container {
+  background: #3f51b5;
+  color: #fff;
 }
 
-.docs-footer a{
-    text-decoration: none;
-    color: #fff;
+.footer-copyright {
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
 }
 
-.docs-footer-list {
-    align-items: center;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 8px;
+.footer a {
+  color: #fff;
 }
 
-.docs-footer-logo{
-    flex: 1;
-}
-
-.docs-footer-version{
-    flex: 1;
-    justify-content: center;
-    display: flex;
-}
-
-.docs-footer-copyright{
-    flex: 1;
-    justify-content: flex-end;
-    display: flex;
-}
-.docs-footer-angular-logo{
-    height: 50px;
-}
-.docs-footer-logo span {
-    display: inline-block;
-    line-height: 50px;
-    margin: 0 40px;
-    vertical-align: bottom;
-}
-
-.docs-footer-copyright div{
-    display: flex;
-    align-self: flex-end;
+.text-center {
     text-align: center;
-    flex-direction: column;
 }

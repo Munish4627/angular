@@ -13,7 +13,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AngularMaterialModule } from './angular-material.module';
+import { AngularMaterialModule } from './material/angular-material.module';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AngularMaterialModule } from './angular-material.module';
     FormsModule, 
     ReactiveFormsModule,
     FlexLayoutModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
