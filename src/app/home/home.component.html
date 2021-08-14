@@ -1,17 +1,42 @@
  <!---Home page slider-->
  <owl-carousel-o [options]="customOptions">
 
-    <ng-container *ngFor="let slide of slides">
-      <ng-template carouselSlide [id]="slide.id">
-        <img [src]="slide.img">
-      </ng-template>
-    </ng-container>
+   <ng-container *ngFor="let slide of slides">
+     <ng-template carouselSlide [id]="slide.id">
+       <img [src]="slide.img">
+     </ng-template>
+   </ng-container>
 
-  </owl-carousel-o>
-<div style="text-align:center">
-  <h1>Angular Content Management System</h1>
-  <p>
-    This is a platform for technical writers to manage their blog post contents related to angular.
-    <br> Click on Login to get Started!!!
-  </p>
-</div>
+ </owl-carousel-o>
+ <section id="main-content">
+   <div class="main-content-top">
+     <div class="container">
+       <div class="row">
+         <div class="main-content-top-img-container">
+           <img src="/assets/img/home_img1.jpg" alt="Teng Bariatrics" class="img-responsive center-block">
+         </div>
+         <div class="main-content-top-text-container">
+           <h1>We approach your problem with the commitment to long-term appropriate care.</h1>
+           <p>Welcome to the Caring Expertise of Dr. Francis W. Teng, M.D., F.A.C.S.</p>
+           <p>Dr. Francis W. Teng, M.D., F.A.C.S.
+             Dr. Francis Teng helps patients considered dangerously overweight to gain control over their bodies,
+             health, life, and self-esteem. His range of surgical expertise enables patients to choose the best
+             alternative for their special circumstances and his attentive follow-up care aims at sustaining the desired
+             results.</p>
+         </div>
+       </div><!-- /.row -->
+     </div><!-- /.container -->
+   </div>
+   <div class="main-content-middle">
+     <div class="container">
+       <div class="row">
+         <div class="col-sm-12">
+           <h5>&ldquo;I had surgery Dec2 2005 at 228pds....the pics were taken July2 2006 (7 months out) at 148...so 80
+             pounds down...BUT 83 INCHES!!! YEAH!!! I cant thank you all enough for the life you've given me BACK!! God
+             bless to you and yours!! Oceans of love Shellaine West&rdquo;</h5>
+           <h4>Shellaine</h4>
+         </div>
+       </div><!-- /.row -->
+     </div><!-- /.container -->
+   </div>
+ </section><!-- /#main-content -->

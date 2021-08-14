@@ -3,7 +3,9 @@
     <mat-card-header>
       <mat-card-title>Register</mat-card-title>
     </mat-card-header>
-
+    <div #myDiv>
+      <input #file (change)="uploadFile(file)" type="file">
+    </div>
     <form class="example-form">
 
       <mat-card-content>
@@ -18,6 +20,10 @@
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Password">
         </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Address">
+        </mat-form-field>
+
 
         <!-- <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Password</mat-label>
