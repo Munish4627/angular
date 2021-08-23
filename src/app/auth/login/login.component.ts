@@ -11,9 +11,7 @@ import { Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   formGroup!: FormGroup;
   constructor(private formBuilder: FormBuilder) { }
-
   
-
   ngOnInit() {
     this.createForm();
   }

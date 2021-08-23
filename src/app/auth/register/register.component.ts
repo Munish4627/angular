@@ -1,56 +1,68 @@
-import { AfterViewInit, Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { AppService } from 'src/app/app.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit, AfterViewInit {
+export class RegisterComponent implements OnInit {
   User: any = ['Super Admin', 'Author', 'Reader'];
-  @ViewChild('myDiv') myDivMunish: any;
+  toppings = new FormControl();
 
-  @ViewChild('UploadFileInput') uploadFileInput: ElementRef | undefined;
-  myfilename = 'Select File';
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
-  // fileChangeEvent(fileInput: any) {
+  formGroup!: FormGroup;
+  constructor(private formBuilder: FormBuilder) {}
 
-  //   if (fileInput.target.files && fileInput.target.files[0]) {
-
-
-  //     this.myfilename = '';
-  //     Array.from(fileInput.target.files).forEach((file: File) => {
-  //       console.log(file);
-  //       this.myfilename += file.name + ',';
-  //     });
-
-  //     const reader = new FileReader();
-  //     reader.onload = (e: any) => {
-  //       const image = new Image();
-  //       image.src = e.target.result;
-  //       image.onload = rs => {
-
-  //         // Return Base64 Data URL
-  //         const imgBase64Path = e.target.result;
-
-  //       };
-  //     };
-  //     reader.readAsDataURL(fileInput.target.files[0]);
-
-  //     // Reset File Input to Selct Same file again
-  //     this.uploadFileInput.nativeElement.value = "";
-  //   } else {
-  //     this.myfilename = 'Select File';
-  //   }
-  // }
-  constructor(private appService: AppService) {}
-  ngAfterViewInit(): void {
-    this.myDivMunish;
-  }
-  uploadFile(event: any) {}
   ngOnInit(): void {
-    this.appService.getCountries().subscribe((res) => {
-      console.log(res);
+    this.createForm();
+  }
+
+  createForm() {
+    this.formGroup = this.formBuilder.group({
+      username: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
     });
+  }
+
+  getError(el: any) {
+    switch (el) {
+      case 'user':
+        if (
+          this.formGroup != null &&
+          this.formGroup.get('username')?.hasError('required')
+        ) {
+          return 'Username required';
+        }
+        break;
+      case 'email':
+        if (
+          this.formGroup != null &&
+          this.formGroup.get('email')?.hasError('required')
+        ) {
+          return 'Email required';
+        }
+        break;
+      case 'pass':
+        if (
+          this.formGroup != null &&
+          this.formGroup.get('password')?.hasError('required')
+        ) {
+          return 'Password required';
+        }
+        break;
+      default:
+        return '';
+    }
+    return null;
+  }
+
+  onSubmit(post: any) {
+    console.log(post);
   }
 }
