@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularMaterialModule } from './material/angular-material.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ReactiveFormsModule,
     FlexLayoutModule,
     AngularMaterialModule,
-    CarouselModule
+    CarouselModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
