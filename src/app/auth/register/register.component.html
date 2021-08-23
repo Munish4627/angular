@@ -28,13 +28,9 @@
           </mat-error>
         </mat-form-field>
 
-        <!-- <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-        </mat-form-field> -->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Address">
+        </mat-form-field>
 
         <!-- <mat-form-field class="example-full-width">
           <mat-label>Choose designation</mat-label>
@@ -57,10 +53,46 @@
           </mat-select>
         </mat-form-field>
 
-      </mat-card-content>
+        <!-- <mat-form-field class="example-full-width">
+          <div class="myfilebrowser">
 
+<<<<<<< HEAD
       <button mat-stroked-button color="accent" class="btn-block" [disabled]="!formGroup.valid">Register</button>
+=======
+            <mat-toolbar>
 
+
+              <input matInput [(ngModel)]="myfilename" readonly name="memberContactNo" />
+
+
+              <button mat-flat-button color="primary">
+                Browse
+              </button>
+>>>>>>> master
+
+            </mat-toolbar>
+
+
+            <input type="file" #UploadFileInput id="fileUpload" (change)="fileChangeEvent($event)" name="fileUpload"
+              multiple="multiple" accept="image/*" />
+
+          </div>
+        </mat-form-field> -->
+
+        <!-- <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field> -->
+
+
+        <!-- <div #myDiv>
+          <input #file (change)="uploadFile(file)" type="file">
+        </div> -->
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn-block">Register</button>
     </form>
   </mat-card>
 </div>
